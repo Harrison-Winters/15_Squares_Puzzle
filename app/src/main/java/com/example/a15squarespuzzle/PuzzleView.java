@@ -1,6 +1,4 @@
 package com.example.a15squarespuzzle;
 
-public class Controller {
-
-
+public class PuzzleView {
 }
