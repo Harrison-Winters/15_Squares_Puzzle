@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteY="826dp" />
+
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/puzzle"
         android:layout_width="match_parent"
@@ -99,12 +111,12 @@
             android:id="@+id/textView24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="7"
-            android:textSize="80sp"
             android:paddingLeft="50dp"
             android:paddingTop="50dp"
             android:paddingRight="50dp"
-            android:paddingBottom="50dp"/>
+            android:paddingBottom="50dp"
+            android:text="7"
+            android:textSize="80sp" />
 
         <TextView
             android:id="@+id/textView25"
@@ -132,12 +144,12 @@
             android:id="@+id/textView27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10"
-            android:textSize="80sp"
             android:paddingLeft="50dp"
             android:paddingTop="50dp"
             android:paddingRight="50dp"
-            android:paddingBottom="50dp"/>
+            android:paddingBottom="50dp"
+            android:text="10"
+            android:textSize="80sp" />
 
         <TextView
             android:id="@+id/textView28"
@@ -193,5 +205,6 @@
             android:paddingTop="50dp"
             android:paddingRight="50dp"
             android:paddingBottom="50dp"/>
+
     </androidx.gridlayout.widget.GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
