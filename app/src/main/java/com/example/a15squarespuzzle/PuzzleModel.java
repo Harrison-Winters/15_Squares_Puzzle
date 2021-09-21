@@ -1,6 +1,9 @@
 package com.example.a15squarespuzzle;
 
 public class PuzzleModel {
+
+
+    //One Idea
     public String tile1;
     public String tile2;
     public String tile3;
