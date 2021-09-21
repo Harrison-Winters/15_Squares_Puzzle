@@ -62,7 +62,7 @@ public class PuzzleView implements View.OnClickListener{
 
         //Shuffle an array with Strings representing the values of each tile
 
-        String[] values =  {"", "1", "2","3","4","5","6","7","8","9","10", "11", "12", "13",
+        String[] values =  {"", " 1", " 2"," 3"," 4"," 5"," 6"," 7"," 8"," 9","10", "11", "12", "13",
                 "14", "15"};
 
         Random rnd = new Random();
