@@ -2,6 +2,7 @@ package com.example.a15squarespuzzle;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.SurfaceView;
 import android.view.View;
@@ -47,6 +48,7 @@ public class PuzzleView implements View.OnClickListener{
         tiles[13] = (TextView)activity.findViewById(R.id.Col1Row3);
         tiles[14] = (TextView)activity.findViewById(R.id.Col2Row3);
         tiles[15] = (TextView)activity.findViewById(R.id.Col3Row3);
+
 
 
     }
@@ -95,8 +97,28 @@ public class PuzzleView implements View.OnClickListener{
 
         }
 
+        setTileColors(tiles);
+
 
     }
 
+    public void setTileColors(TextView[] tiles) {
+
+        //find max width
+
+        int max = 0;
+        for (int i = 0; i < 15; i++) {
+            int curr = tiles[i].getWidth();
+            if (curr > max) {
+                max = curr;
+            }
+        }
+
+        //Set Background Colors for Tiles
+        for (int i = 0; i < tiles.length; i++) {
+            tiles[i].setBackgroundColor(Color.argb(255,0,i * 10, 255 - (i *10)));
+            tiles[i].setWidth(max);
+        }
+    }
 
 }
