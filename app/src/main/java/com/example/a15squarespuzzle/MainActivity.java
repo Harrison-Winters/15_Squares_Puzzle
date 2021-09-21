@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Find Buttons
         View reset = (View) findViewById(R.id.reset);
-        setContentView(R.layout.activity_main);
 
-        PuzzleView puzzleView = (PuzzleView) findViewById(R.id.puzzleView);
+
+        PuzzleView puzzleView = new PuzzleView(this);
         PuzzleController CakeController = new PuzzleController(puzzleView);
 
         //Set listener
