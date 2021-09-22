@@ -15,14 +15,12 @@ public class PuzzleView implements View.OnClickListener{
 
     private PuzzleModel puzzleInfo;
     private Activity activity;
-
-   private TextView[] tiles;
-
+    private TextView[] tiles;
 
 
 
-    //public TextView[] tiles = {Col0Row0,Col1Row0, Col2Row0, Col3Row0, Col0Row1,Col1Row1, Col2Row1,Col3Row1,
-       //     Col0Row2, Col1Row2, Col2Row2, Col3Row2, Col0Row3, Col1Row3, Col2Row3, Col3Row3};
+
+
 
     public PuzzleView(Activity mainActivity) {
         this.activity = mainActivity;
@@ -62,6 +60,13 @@ public class PuzzleView implements View.OnClickListener{
     @Override
     public void onClick(View view) {
 
+        //Initially set all Background Colors to white
+        for (int i = 0; i < tiles.length; i++) {
+                tiles[i].setBackgroundColor(Color.argb(255, 255, 255, 255));
+        }
+
+
+
         //Shuffle an array with Strings representing the values of each tile
 
         String[] values =  {"", " 1", " 2"," 3"," 4"," 5"," 6"," 7"," 8"," 9","10", "11", "12", "13",
@@ -80,7 +85,7 @@ public class PuzzleView implements View.OnClickListener{
 
         //transfer tile values into the PuzzleModel
 
-        for (int i = 0; i < values.length - 1; i++) {
+        for(int i = 0; i < values.length - 1; i++) {
 
             puzzleInfo.tileValues[i] = values[i];
         }
@@ -116,9 +121,13 @@ public class PuzzleView implements View.OnClickListener{
 
         //Set Background Colors for Tiles
         for (int i = 0; i < tiles.length; i++) {
-            tiles[i].setBackgroundColor(Color.argb(255,0,i * 10, 255 - (i *10)));
-            tiles[i].setWidth(max);
+            if (!tiles[i].getText().equals("")) {
+                tiles[i].setBackgroundColor(Color.argb(255, 0, i * 10, 255 - (i * 10)));
+                tiles[i].setWidth(max);
+            }
         }
     }
+
+
 
 }
