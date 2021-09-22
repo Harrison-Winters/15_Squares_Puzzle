@@ -16,6 +16,7 @@ public class PuzzleView implements View.OnClickListener{
     private PuzzleModel puzzleInfo;
     private Activity activity;
     private TextView[] tiles;
+    private TextView[][] tiles2D;
 
 
 
@@ -29,6 +30,8 @@ public class PuzzleView implements View.OnClickListener{
         puzzleInfo = new PuzzleModel();
 
         tiles = new TextView[16];
+        tiles2D = new TextView[4][4];
+
         //Find TextViews
         tiles[0] = (TextView)activity.findViewById(R.id.Col0Row0);
         tiles[1] = (TextView)activity.findViewById(R.id.Col1Row0);
@@ -46,6 +49,25 @@ public class PuzzleView implements View.OnClickListener{
         tiles[13] = (TextView)activity.findViewById(R.id.Col1Row3);
         tiles[14] = (TextView)activity.findViewById(R.id.Col2Row3);
         tiles[15] = (TextView)activity.findViewById(R.id.Col3Row3);
+
+        //Set up tiles2D
+        tiles2D[0][0] = tiles[0];
+        tiles2D[0][1] = tiles[0];
+        tiles2D[0][2] = tiles[0];
+        tiles2D[0][3] = tiles[0];
+        tiles2D[1][0] = tiles[0];
+        tiles2D[1][1] = tiles[0];
+        tiles2D[1][2] = tiles[0];
+        tiles2D[1][3] = tiles[0];
+        tiles2D[2][0] = tiles[0];
+        tiles2D[2][1] = tiles[0];
+        tiles2D[2][2] = tiles[0];
+        tiles2D[2][3] = tiles[0];
+        tiles2D[3][0] = tiles[0];
+        tiles2D[3][1] = tiles[0];
+        tiles2D[3][2] = tiles[0];
+        tiles2D[3][3] = tiles[0];
+
 
         //Create instance of PuzzleControlller
         PuzzleController puzzleC = new PuzzleController(this);
