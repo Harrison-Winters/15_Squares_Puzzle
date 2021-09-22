@@ -1,6 +1,9 @@
 package com.example.a15squarespuzzle;
 
-public class PuzzleController {
+import android.graphics.Color;
+import android.view.View;
+
+public class PuzzleController implements View.OnClickListener{
     private PuzzleModel currPuzzleModel;
     private PuzzleView currPuzzleView;
 
@@ -10,5 +13,8 @@ public class PuzzleController {
     }
 
 
-
+    @Override
+    public void onClick(View view) {
+        view.setBackgroundColor(Color.RED);
+    }
 }

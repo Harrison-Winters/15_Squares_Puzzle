@@ -47,7 +47,16 @@ public class PuzzleView implements View.OnClickListener{
         tiles[14] = (TextView)activity.findViewById(R.id.Col2Row3);
         tiles[15] = (TextView)activity.findViewById(R.id.Col3Row3);
 
+        //Create instance of PuzzleControlller
+        PuzzleController puzzleC = new PuzzleController(this);
 
+
+
+        //Set TextView Listeners
+
+        for (int i = 0; i < tiles.length; i++) {
+            tiles[i].setOnClickListener(puzzleC);
+        }
 
     }
 
@@ -56,6 +65,10 @@ public class PuzzleView implements View.OnClickListener{
     public PuzzleModel getPuzzleModel() {
         return puzzleInfo;
     }
+
+
+
+
 
     @Override
     public void onClick(View view) {

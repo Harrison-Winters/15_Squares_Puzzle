@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
         PuzzleView puzzleView = new PuzzleView(this);
         PuzzleController CakeController = new PuzzleController(puzzleView);
 
-        //Set listener
+        //Set listener for Reset Button
         reset.setOnClickListener(puzzleView);
+
+
 
 
         //Have the Reset Button be pressed at Start Up
