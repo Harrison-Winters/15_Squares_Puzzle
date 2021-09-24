@@ -7,6 +7,8 @@ public class PuzzleModel {
 
 
 
+
+
  /*   //One Idea
     public String tile1;
     public String tile2;

@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Find Buttons
+        //Find Button
         View reset = (View) findViewById(R.id.reset);
 
 
