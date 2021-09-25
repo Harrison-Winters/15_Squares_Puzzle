@@ -8,6 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+/*
+Name: Harrison Winters
+Class: CS301
+Version Date: 9/25/2021
+
+ */
+
+
 public class MainActivity extends AppCompatActivity {
 
 

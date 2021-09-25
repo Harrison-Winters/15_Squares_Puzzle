@@ -111,22 +111,26 @@ public class PuzzleView implements View.OnClickListener {
 
         //transfer tile values into the PuzzleModel
 
+
         for (int i = 0; i < values.length - 1; i++) {
 
             puzzleInfo.tileValues[i] = values[i];
         }
 
 
-        //Tell View to redraw
-        //invalidate();
+
+
 
         //Set text of Textviews
 
-        for (int i = 0; i < 15; i++) {
+
+        for (int i = 0; i < 16; i++) {
             tiles[i].setText(puzzleInfo.tileValues[i]);
 
 
         }
+
+
 
         setTileColors(tiles2D);
 
