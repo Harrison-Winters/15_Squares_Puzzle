@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Have the Reset Button be pressed at Start Up
+
+
         reset.post(new Runnable() {
             @Override
             public void run() {

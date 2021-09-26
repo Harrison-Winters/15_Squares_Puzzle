@@ -17,7 +17,6 @@
         tools:layout_editor_absoluteX="0dp" />
 
 
-
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/puzzle"
         android:layout_width="wrap_content"
@@ -28,6 +27,7 @@
         app:layout_constraintBottom_toTopOf="@+id/reset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:rowCount="4">
 
 

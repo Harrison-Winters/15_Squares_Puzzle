@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 public class PuzzleView implements View.OnClickListener {
@@ -96,25 +99,20 @@ public class PuzzleView implements View.OnClickListener {
 
         //Shuffle an array with Strings representing the values of each tile
 
-        String[] values = {"", " 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9", "10", "11", "12", "13",
-                "14", "15"};
+        List<String> values = Arrays.asList("", " 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9", "10", "11", "12", "13",
+                "14", "15");
 
-        Random rnd = new Random();
 
-        for (int i = values.length - 1; i > 0; i--) {
-            int index = rnd.nextInt(i + 1);
-            String p = values[index];
-            values[index] = values[i];
-            values[i] = p;
-        }
+        Collections.shuffle(values);
+
+
+
 
 
         //transfer tile values into the PuzzleModel
+        for (int i = 0; i < values.size() ; i++) {
 
-
-        for (int i = 0; i < values.length - 1; i++) {
-
-            puzzleInfo.tileValues[i] = values[i];
+            puzzleInfo.tileValues[i] = values.get(i);
         }
 
 
@@ -123,14 +121,13 @@ public class PuzzleView implements View.OnClickListener {
 
         //Set text of Textviews
 
-
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < values.size(); i++) {
             tiles[i].setText(puzzleInfo.tileValues[i]);
 
 
         }
 
-
+        //Set Background Colors for tiles
 
         setTileColors(tiles2D);
 
@@ -142,7 +139,7 @@ public class PuzzleView implements View.OnClickListener {
         //find max width
 
         int max = 0;
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 16; i++) {
             int curr = tiles[i].getWidth();
             if (curr > max) {
                 max = curr;
