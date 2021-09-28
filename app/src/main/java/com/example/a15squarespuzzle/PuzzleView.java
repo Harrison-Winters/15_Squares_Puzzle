@@ -31,7 +31,7 @@ public class PuzzleView implements View.OnClickListener {
         tiles = new TextView[16];
         tiles2D = new TextView[4][4];
 
-        //Find TextViews
+        //Find TextViews and set them to indices of the tiles array
         tiles[0] = (TextView) activity.findViewById(R.id.Col0Row0);
         tiles[1] = (TextView) activity.findViewById(R.id.Col1Row0);
         tiles[2] = (TextView) activity.findViewById(R.id.Col2Row0);
@@ -49,7 +49,8 @@ public class PuzzleView implements View.OnClickListener {
         tiles[14] = (TextView) activity.findViewById(R.id.Col2Row3);
         tiles[15] = (TextView) activity.findViewById(R.id.Col3Row3);
 
-        //Set up tiles2D
+        //Set up tiles2D (A 2 dimensional version of the tiles array)
+        //This will be used for swapping tiles and detecting a win later
         tiles2D[0][0] = tiles[0];
         tiles2D[0][1] = tiles[1];
         tiles2D[0][2] = tiles[2];
@@ -73,7 +74,6 @@ public class PuzzleView implements View.OnClickListener {
 
 
         //Set TextView Listeners
-
         for (int i = 0; i < tiles.length; i++) {
             tiles[i].setOnClickListener(puzzleC);
         }
@@ -81,10 +81,23 @@ public class PuzzleView implements View.OnClickListener {
     }
 
 
-    public PuzzleModel getPuzzleModel() {
+    /**
+     * Getter method getPuzzleModel(), used for returning the Puzzle model currently being used
+     * @return PuzzleModel
+     */
+    public PuzzleModel getPuzzleModel()
+    {
         return puzzleInfo;
     }
 
+    /**
+    * Built-in onClick Method, tells program what to do when a view is clicked
+    * In this case it shuffles the tiles when the reset button is clicked and
+    * sets the background colors
+    * @param view
+    * @return void
+    *
+     */
 
     @Override
     public void onClick(View view) {
@@ -102,10 +115,7 @@ public class PuzzleView implements View.OnClickListener {
         List<String> values = Arrays.asList("", " 1", " 2", " 3", " 4", " 5", " 6", " 7", " 8", " 9", "10", "11", "12", "13",
                 "14", "15");
 
-
         Collections.shuffle(values);
-
-
 
 
 
@@ -133,6 +143,12 @@ public class PuzzleView implements View.OnClickListener {
 
 
     }
+
+    /**
+     * Helper Method used to set the tile background colors
+     * @param tiles2D
+     */
+
 
     public void setTileColors(TextView[][] tiles2D) {
 
